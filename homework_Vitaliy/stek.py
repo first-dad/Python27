@@ -77,7 +77,6 @@ if __name__ == '__main__':
     stack.pop()
     print stack
     stack.push(2)
-    print stack
     stack.pop()
     print stack
 
