@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+# нерабочий!!!!!!!!!!
+
 import Set
 import math
 
