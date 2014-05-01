@@ -2,39 +2,35 @@
 
 
 __author__ = 'Илья'
+import fractions
 
 
-class Num(object):
-    value1 = float(raw_input("Введите первую переменную: "))
-    value2 = float(raw_input("Введите вторую переменную: "))
-
-
-class Func(Num):
-    operator = raw_input("Введите действие: ")
-
-    def __init__(self):
-        self.result = 0
+class Calculator(object):
+    def __init__(self, value1, value2, operator):
+        self.value1 = value1
+        self.value2 = value2
+        self.operator = operator
 
     def action(self):
         if self.operator == '+':
-            self.result = Num.value1 + Num.value2
+            self.result = self.value1 + self.value2
         elif self.operator == '-':
-            self.result = Num.value1 - Num.value2
+            self.result = self.value1 - self.value2
         elif self.operator == '*':
-            self.result = Num.value1 * Num.value2
+            self.result = self.value1 * self.value2
         elif self.operator == '/':
-            self.result = Num.value1 / Num.value2
-        print "{0} {1} {2} = {3}" .format(Num.value1, self.operator, Num.value2, self.result)
+            self.result = self.value1 / self.value2
+        print "{0} {1} {2} = {3}" .format(self.value1, self.operator, self.value2, self.result)
 
-
-def calculator():
-    n = Func()
-    n.action()
-    cal = raw_input("Выключить калькулятор? (да/нет): ")
-    if cal == "да":
-        print "Приятного полёта"
-    else:
-        print "Подскажите как заново запустить калькулятор..."
 
 if __name__ == '__main__':
-    calculator()
+    while 1:
+        calc = Calculator(
+            float(raw_input("Введите первую переменную: ")),
+            float(raw_input("Введите вторую переменную: ")),
+            raw_input("Введите действие: ")
+        )
+        calc.action()
+        if raw_input("Выключить калькулятор? (да/нет): ") == "да":
+            print "Приятного полёта"
+            break
